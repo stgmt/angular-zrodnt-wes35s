@@ -6,10 +6,10 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Created Date
-      <button scope="col" (click)="this.sort()">Sort</button>
+      <th scope="col">
+        Created Date
+        <button scope="col" (click)="this.sort()">Sort</button>
       </th>
-      
     </tr>
   </thead>
   <tbody>
@@ -17,7 +17,10 @@
       <td>
         {{ doc.id }}
       </td>
-      <td>{{ doc.name }}</td>
+
+      <td>
+        <span><a [href]="this.getDocumentLink(doc)">{{doc.name}}</a></span>
+      </td>
       <td>{{ doc.createdate }}</td>
     </tr>
   </tbody>

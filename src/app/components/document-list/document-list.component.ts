@@ -12,6 +12,10 @@ export class DocumentListComponent implements OnInit {
   sorted: boolean = false;
   constructor(private docService: DocumentService) {}
 
+  getDocumentLink(doc: Document) {
+    return "/document/" + doc.id;
+  }
+
   sort() {
     if (!this.sorted) {
       this.sorted = true;

@@ -1,6 +1,6 @@
 MVP1
-1) Implement Document model (models/Document.ts) basing on assets/documents.json data
-2) Implement DocumentService (services/document.service.ts) to get data from assets/documents.json using HttpClient;
++ 1) Implement Document model (models/Document.ts) basing on assets/documents.json data
++ 2) Implement DocumentService (services/document.service.ts) to get data from assets/documents.json using HttpClient;
 3) Implement DocumentListComponent (components/document-list/*), read list of files via DocumentService and show as a read-only table or list of Documents when "Load Documents" button is clicked;
 - Display only the following properties: id, name, createddate.
 - Sort files in the list by createddate, in descending order.

@@ -6,8 +6,8 @@ MVP1
 + - Sort files in the list by createddate, in descending order.
 + - Name property should be a clickable link that routes to /document/:id.
 Note: Routes already set up in app-routing.modules.ts.
-4) Implement DocumentDataComponent (component/document-data/*) to read and display all properties of a single document data by ID using /document/:id route.
-- Go Back button should return back to previous page.
++ 4) Implement DocumentDataComponent (component/document-data/*) to read and display all properties of a single document data by ID using /document/:id route.
++ - Go Back button should return back to previous page.
 
 MVP2
 6) Implement pipes/file-size.pipe.ts to convert bytes of document sizes into largest possible unit;

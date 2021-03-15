@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-
+import { Location } from "@angular/common";
 import { DocumentService } from "../../services/document.service";
-
+import { FileSizePipe } from "../../pipes/file-size.pipe";
 import { Document } from "../../models/document";
 
 @Component({
@@ -15,18 +15,19 @@ export class DocumentDataComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private docService: DocumentService
+    private docService: DocumentService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];
-    
+
     if (id) {
       this.docService.getDocument(id).subscribe(x => (this.document = x));
     }
   }
 
   goBack(): void {
-    window.location.href = "/";
+    this.location.back();
   }
 }

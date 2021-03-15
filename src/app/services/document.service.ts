@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import { Document } from "../models/document";
 import { map } from "rxjs/operators";
@@ -10,7 +10,8 @@ export class DocumentService {
   constructor(private httpClient: HttpClient) {}
 
   getDocuments(): Observable<Document[]> {
-    return this.httpClient.get<Document[]>("/assets/json/documents.json");
+
+    return this.httpClient.get<Document[]>("/assets/documents.json" ,  { observe: 'body', responseType: 'json'});
   }
 
   getDocument(id: number): Observable<Document> {

@@ -1,25 +1,21 @@
-<a class="button load-button">Load Documents</a>
+<a class="button load-button" (click)="this.loadDocuments()">Load Documents</a>
 <h2>Documents:</h2>
 
 <table class="table table-striped">
   <thead>
-  <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Name</th>
-    <th scope="col">Created Date</th>
-    
-  </tr>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Created Date</th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let doc of this.documents; index as i">
-    <th scope="row">{{ i + 1 }}</th>
-    <td>
-    
-      {{ doc.id }}
-    </td>
-    <td>{{ doc.name }}</td>
-    <td>{{ doc.createdate }}</td>
-  </tr>
+    <tr *ngFor="let doc of this.documents; index as i">
+      <td>
+        {{ doc.id }}
+      </td>
+      <td>{{ doc.name }}</td>
+      <td>{{ doc.createdate }}</td>
+    </tr>
   </tbody>
 </table>
-

@@ -1,3 +1,31 @@
 <h2>File Details:</h2>
 
-<a class="button back-button">Go Back</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Size</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Created By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <td>
+      {{ document.id }}
+    </td>
+
+    <td>
+      {{ document.name }}
+    </td>
+    <td>
+      {{ document.size }}
+    </td>
+    <td>{{ document.createdate }}</td>
+    <td>
+      {{ document.createdby }}
+    </td>
+  </tbody>
+</table>
+
+<a class="button back-button" (click)="goBack()">Go Back</a>

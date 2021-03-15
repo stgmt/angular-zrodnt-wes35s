@@ -4,7 +4,7 @@ MVP1
 + 3) Implement DocumentListComponent (components/document-list/*), read list of files via DocumentService and show as a read-only table or list of Documents when "Load Documents" button is clicked;
 + - Display only the following properties: id, name, createddate.
 + - Sort files in the list by createddate, in descending order.
-- Name property should be a clickable link that routes to /document/:id.
++ - Name property should be a clickable link that routes to /document/:id.
 Note: Routes already set up in app-routing.modules.ts.
 4) Implement DocumentDataComponent (component/document-data/*) to read and display all properties of a single document data by ID using /document/:id route.
 - Go Back button should return back to previous page.

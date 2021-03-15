@@ -13,7 +13,7 @@ export class DocumentListComponent implements OnInit {
   constructor(private docService: DocumentService) {}
 
   getDocumentLink(doc: Document) {
-    return "/document/" + doc.id;
+    return "/documents/" + doc.id;
   }
 
   sort() {

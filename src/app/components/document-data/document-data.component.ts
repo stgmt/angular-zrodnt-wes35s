@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { DocumentService } from '../../services/document.service';
 import { FileSizePipe } from '../../pipes/file-size.pipe';
+import { Document } from '../../models/document';
 
 @Component({
   selector: 'app-document-data',
@@ -15,10 +16,19 @@ export class DocumentDataComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private docService: DocumentService,
-    private location: Location
+    private location: Location,
+    
   ) {}
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {      
+       let id = params['id']; 
+       if(id){
+           this.docService.getDocument(id).subscribe(x=> this.document = x)
+           return;
+       }
+            
+    });
   }
 
   goBack(): void {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DocumentService } from '../../services/document.service';
-
+import { Document } from '../../models/document';
 @Component({
   selector: 'app-document-list',
   templateUrl: './document-list.component.html',
@@ -12,17 +12,19 @@ export class DocumentListComponent implements OnInit {
 
   constructor(
       private docService: DocumentService,
-      private route: ActivatedRoute,
+   
     ) {}
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {      
-       let id = params['id']; 
-       if(id){
-           this.docService.getDocument(id).subscribe(x=> this.documents.push(x))
-       }
-     
+
+  loadDocuments(){
+    this.docService.getDocuments().subscribe(x=>{
+      console.log(x);
+      this.documents = x;
     });
+  }
+
+  ngOnInit() {
+    
     
   }
 

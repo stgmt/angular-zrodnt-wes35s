@@ -1,31 +1,24 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Observable, of } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
-import { Document } from '../models/document';
-import { map } from 'rxjs/operators';
+import { Document } from "../models/document";
+import { map } from "rxjs/operators";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class DocumentService {
-
-  constructor(private httpClient: HttpClient) {
-
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getDocuments(): Observable<Document[]> {
-    return this.httpClient.get<Document[]>('/assets/json/documents.json',  { observe: 'body' });
+    return this.httpClient.get<Document[]>("/assets/json/documents.json");
   }
 
   getDocument(id: number): Observable<Document> {
-    
-    return this.httpClient.get<Document[]>('/assets/json/documents.json',  { observe: 'body' })
-    .pipe(
-    map( response => {
-     
-     let result: Document = response.find(c=>c.id === id);
-     return result;
-   }));
-    
+    return this.httpClient.get<Document[]>("/assets/json/documents.json").pipe(
+      map(response => {
+        let result: Document = response.find(c => c.id === id);
+        return result;
+      })
+    );
   }
-
 }
